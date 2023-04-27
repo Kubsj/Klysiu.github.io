@@ -32,13 +32,15 @@
   color: var(--light-header-text);
   width: 20%;
   height: 40%;
-  transition: transform 500ms;
+  transition: transform 500ms, color 500ms;
 }
 .h-button.light.left:hover {
-  transition: transform 500ms;
+  transition: transform 500ms, color 500ms;
+  color: white;
   transform: rotate(10deg) scale(110%);
 }
 .h-button.light.right:hover {
-  transition: transform 500ms;
+  transition: transform 500ms, color 500ms;
+  color: white;
   transform: rotate(-10deg) scale(110%);
 }

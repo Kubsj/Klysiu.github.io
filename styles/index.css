@@ -1,0 +1,4 @@
+.kubsj-screenfill-light {
+  background-color: var(--light-screenfill-bg);
+  color: var(--light-screenfill-text);
+}

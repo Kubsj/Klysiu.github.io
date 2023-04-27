@@ -1,0 +1,35 @@
+:root {
+  --col01: #e3f09b;
+  --col02: #321312;
+  --col03: #f79f79;
+  --col04: #686963;
+  --col05: #2e294e;
+  --col06: #d7cf07;
+  --col07: #af1b3f;
+
+  --light-bg: var(--col01);
+
+  --light-screenfill-bg: var(--col03);
+  --light-screenfill-text: var(--col01);
+  --light-header-text: var(--col04);
+  --light-header-bg: var(--col07);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  min-height: 100vh;
+}
+.screenfill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 108px;
+  width: 100vw;
+  height: 100vh;
+  overflow: visible;
+}

@@ -25,7 +25,7 @@
   overflow-y: hidden;
 }
 body {
-  min-height: 100vh;
+  min-height: 00vh;
 }
 .screenfill {
   flex-direction: column;
@@ -44,6 +44,57 @@ body {
 .screenfill h3 {
   font-size: 20px;
   background-color: transparent;
+}
+.settings-container {
+  top: 70px;
+  right: -210px;
+  width: 140px;
+  height: 210px;
+  position: fixed;
+  background-color: blue;
+}
+.settings-button {
+  top: 70px;
+  right: -70px;
+
+  position: fixed;
+  float: left;
+  display: flex;
+  width: 140px;
+  height: 70px;
+
+  align-items: center;
+  animation-name: show;
+
+  background-color: #af1b3f;
+  border-radius: 20px 0 0 20px;
+
+  transition: transform 1s;
+}
+.settings-menu {
+  height: 210px;
+  width: 100px;
+}
+.settings-button span {
+  margin-left: 10px;
+  transition: 1s;
+  font-size: 50px;
+}
+.settings-button:hover {
+  transform: scale(110%);
+  transition: 1s;
+}
+.settings-button:hover span {
+  transform: rotate(360deg);
+  transition: 1s;
+}
+.settings-container.Opened span {
+  color: white;
+  transition: 1s;
+}
+.settings-container.Closed span {
+  transition: 1s;
+  color: black;
 }
 .header {
   width: 100vw;

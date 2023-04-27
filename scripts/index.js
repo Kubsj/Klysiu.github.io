@@ -5,4 +5,4 @@ function bottom() {
 
 window.setTimeout(function () {
   bottom();
-}, 2000);
+}, 500);

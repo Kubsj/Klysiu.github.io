@@ -1,4 +1,10 @@
-.kubsj-screenfill-light {
+.screenfill.light {
   background-color: var(--light-screenfill-bg);
   color: var(--light-screenfill-text);
+}
+.header.light {
+  background-color: var(--light-header-bg);
+  color: var(--light-header-text);
+}
+.h-button.light {
 }

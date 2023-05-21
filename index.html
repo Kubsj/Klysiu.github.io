@@ -1,45 +1,107 @@
 <!DOCTYPE html>
 <html lang="pl">
   <head>
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles/base.css" />
-    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="style.css" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <title>Strona główna</title>
   </head>
-  <body>
-    <div class="screenfill light">
-      <h1>Kubsj</h1>
-      <br />
-      <h3>Jakub Kłysiu Kłysiński</h3>
+  <body onload="OnLoad()">
+    <div class="intro-setup">
+      <div class="object">Klysiu</div>
     </div>
-    <div class="settings-container">
-      <div class="settings-button light">
-        <span class="material-icons Closed"> settings </span>
+    <div class="website">
+      <div class="nav-header">
+        <a href="#main">About me</a>
+        <a href="#projects">Projects</a>
+        <a href="#photos">Photos</a>
+        <a href="#contact">Contact</a>
       </div>
-    </div>
+      <div class="maincontent about-me">
+        <h1>Jacob "Kłysiu" Klysinski</h1>
+        <h2>Software developer</h2>
+        <h3><u>About me</u></h3>
+        <p>
+          Hello! My name is Jacob, I am 16 years old and I'm from
+          <pl></pl>.
+        </p>
+        <p>
+          <u>I love learning</u> and discovering new things, I'm open to
+          <u> new experiences</u>.
+        </p>
+        <p>
+          My specialization is game development in
+          <a href="#unity">Unity Game Engine</a> and<a href="#csharp">
+            C# programming</a
+          >, but I also love creating websites using <u> HTML5 and CSS3</u>.
+        </p>
+        <p>
+          I can work alone or in a team. I'm not an experienced leader but
+          <u>I can fill that role </u> if needed.
+        </p>
+        <hr />
+        <h2>Here's some of my awesome work!</h2>
+        <div class="about-me project-container">
+          <a class="about-me project">
+            <img src="img/jaca.jpg" alt="Jaca" />
 
-    <div class="header light">
-      <div class="h-button-container light">
-        <a href="#index" class="h-button light left active" id="a-index"
-          >Strona Główna</a
-        >
-        <a href="#me" class="h-button light right" id="a-me">O mnie</a>
-        <a href="#projects" class="h-button light left" id="a-project"
-          >Moje projekty</a
-        >
-        <a href="#contact" class="h-button light right" id="a-contact"
-          >Kontakt</a
-        >
+            <h3>Extinction order</h3>
+            <p>
+              A sci-fi game with a dark atmosphere and a heartbreaking story.
+            </p>
+
+            <p><u>Type: Game</u></p>
+          </a>
+
+          <a class="about-me project">
+            <img src="img/jaca.jpg" alt="Jaca" />
+
+            <h3>Sport TZN</h3>
+            <p>
+              A website dedicated for displaying various sport activities.
+              Created for my school
+            </p>
+
+            <p><u>Type: Website</u></p>
+          </a>
+          <a class="about-me project">
+            <img src="img/jaca.jpg" alt="Jaca" />
+
+            <h3>Sport TZN</h3>
+            <p>
+              A website dedicated for displaying various sport activities.
+              Created for my school
+            </p>
+
+            <p><u>Type: Website</u></p>
+          </a>
+          <a class="about-me project">
+            <img src="img/jaca.jpg" alt="Jaca" />
+
+            <h3>Sport TZN</h3>
+            <p>
+              A website dedicated for displaying various sport activities.
+              Created for my school
+            </p>
+
+            <p><u>Type: Website</u></p>
+          </a>
+          <a class="about-me project">
+            <img src="img/jaca.jpg" alt="Jaca" />
+
+            <h3>Sport TZN</h3>
+            <p>
+              A website dedicated for displaying various sport activities.
+              Created for my school
+            </p>
+
+            <p><u>Type: Website</u></p>
+          </a>
+        </div>
       </div>
+      <div class="footer"></div>
     </div>
-    <div class="maincontent" id="main"></div>
-    <div class="footer"></div>
+    <script src="script.js"></script>
   </body>
-  <script src="scripts/index.js"></script>
 </html>

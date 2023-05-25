@@ -1,30 +1,37 @@
 :root {
-  --x: 400px;
-  --y: 400px;
-  --z: 400px;
-  --distX: calc(var(--x) / 2);
-  --distY: calc(var(--y) / 2);
-  --distZ: calc(var(--z) / 2);
-  --distXr: calc(var(--x) / 2 * -1);
-  --distYr: calc(var(--y) / 2 * -1);
-  --distZr: calc(var(--z) / 2 * -1);
+  --size: 200px;
+
+  --dist: calc(var(--size) / 2);
 
   --rX: 0deg;
   --rY: 0;
 }
 
 .c-scene {
-  width: var(--x);
-  height: var(--y);
-  perspective: var(--z);
+  width: var(--size);
+  height: var(--size);
+  perspective: calc(var(--size));
 }
 .c-cube {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   transform-style: preserve-3d;
-  width: var(--x);
-  height: var(--y);
+  width: var(--size);
+  height: var(--size);
   transition: transform 1s;
-  transform: translateZ(var(--distZr)) rotateX(var(--rX)) rotateY(var(--rY));
+  transform: translateZ(var(--size)) rotateX(var(--rX)) rotateY(var(--rY));
+}
+.c-cube .h-stack {
+  transform-style: preserve-3d;
+}
+.c-cube .h-stack h1 {
+  text-align: center;
+  position: absolute;
+  transform: translateX(-50%) translateY(-50%) translateZ(-20px);
+  font-size: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .c-cube-face {
   border: 1px dotted black;
@@ -34,32 +41,34 @@
   align-items: center;
   display: flex;
   text-transform: uppercase;
-  opacity: 70%;
+  opacity: 100%;
+  background-image: url(img/jaca.jpg);
+  background-size: 100% 100%;
   position: absolute;
-  width: var(--x);
-  height: var(--y);
+  width: var(--size);
+  height: var(--size);
 }
 .c-cube-face.front {
   background-color: rgb(255, 102, 102);
-  transform: rotateY(0) translateZ(var(--distZ));
+  transform: rotateY(0) translateZ(var(--dist));
 }
 .c-cube-face.back {
   background-color: rgb(250, 255, 94);
-  transform: rotateY(180deg) translateZ(var(--distZ));
+  transform: rotateY(180deg) translateZ(var(--dist));
 }
 .c-cube-face.left {
   background-color: rgb(218, 195, 255);
-  transform: rotateY(-90deg) translateZ(var(--distZ));
+  transform: rotateY(-90deg) translateZ(var(--dist));
 }
 .c-cube-face.right {
   background-color: rgb(255, 255, 255);
-  transform: rotateY(90deg) translateZ(var(--distZ));
+  transform: rotateY(90deg) translateZ(var(--dist));
 }
 .c-cube-face.top {
   background-color: rgb(163, 250, 163);
-  transform: rotateX(90deg) translateZ(var(--distZ));
+  transform: rotateX(90deg) translateZ(var(--dist));
 }
 .c-cube-face.bottom {
   background-color: rgb(189, 189, 54);
-  transform: rotateX(-90deg) translateZ(var(--distZ));
+  transform: rotateX(-90deg) translateZ(var(--dist));
 }

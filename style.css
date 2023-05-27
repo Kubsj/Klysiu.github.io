@@ -1,31 +1,28 @@
 :root {
-  --color1: #33cc33;
-  --color2: #29a329;
-  --color3: #248f24;
-  --color4: #47d147;
-  --color5: #33cc59;
-  --color6: #33cca6;
-  --color7: #3333cc;
-  --color8: #adebad;
-  --color9: #0a290a;
-  --color10: #738c73;
-  --color11: #cc3380;
-  --color12: #cca633;
-  --color13: #33cccc;
-  --color14: #33cc80;
-  --color15: #cc8033;
-  --color16: #000000;
+  --color1: #242038;
+  --color2: #006e90;
+  --color3: #e1d89f;
+  --color4: #f65be3;
+  --color5: #f26157;
+  --color6: #124764;
+  --color7: #71a398;
+  --color8: #ec9ac1;
+  --color9: #f45e9d;
+  --color10: #f36f66;
 
-  --bgHeader: var(--color14);
-  --bgNav: var(--color8);
-  --bgMain: var(--color5);
-  --bgFooter: var(--color1);
-  --textHeader: var(--color7);
-  --textParagraph: var(--color9);
-  --textLink: var(--color7);
+  --bgHeader: var(--color1);
+  --bgNav: var(--color2);
+  --bgNavBtn: var(--color10);
+  --bgMain: var(--color6);
+  --bgFooter: var(--color4);
+  --textHeader: var(--color5);
+  --textHeaderAlt: var(--color4);
+  --textParagraph: var(--color1);
+  --textLink: var(--color6);
 }
 
 * {
+  overflow-x: hidden;
   margin: 0;
   padding: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -36,15 +33,15 @@
 * > h4,
 * > h5,
 * > h6 {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Courier New", Courier, monospace;
   text-transform: uppercase;
-  color: var(--color16);
+  color: var(--textHeader);
 }
 * > p {
   color: var(--textParagraph);
 }
 * > a {
-  font-family: 'Courier New', Courier, monospace
+  font-family: "Courier New", Courier, monospace;
   color: var(--textLink);
 }
 
@@ -65,27 +62,55 @@ body {
   background-color: var(--bgHeader);
 }
 .nav {
+  overflow: hidden;
   padding: 10px;
   display: flex;
   gap: 10px;
   justify-content: flex-end;
   align-items: center;
   background-color: var(--bgNav);
+  background: linear-gradient(
+    180deg,
+    var(--bgHeader),
+    var(--bgNav),
+    var(--bgMain)
+  );
 }
 .nav > a {
+  border: 1px solid black;
   border-radius: 10px;
   font-size: large;
   text-decoration: none;
-  min-width: 8%;
-  background-color: black;
+  min-width: 6%;
+  background-color: var(--bgNavBtn);
   height: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: transform 300ms;
+}
+.nav > a:hover {
+  transform: scale(110%);
+  z-index: 3;
+  transition: transform 300ms;
 }
 .maincontent {
   background-color: var(--bgMain);
 }
+.scroll {
+  width: max-content;
+  word-wrap: normal;
+  position: absolute;
+
+  letter-spacing: 3px;
+  font-size: x-large;
+  animation-name: scroll;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+
 .footer {
   display: flex;
   font-size: larger;
@@ -94,9 +119,11 @@ body {
   background-color: var(--bgFooter);
 }
 @media (max-aspect-ratio: 1/1) {
+  .nav {
+    justify-content: center;
+  }
   .nav > a {
-
-  min-width: 33%;
-
-}
+    font-size: x-large;
+    min-width: 30%;
+  }
 }

@@ -1,19 +1,102 @@
+:root {
+  --color1: #33cc33;
+  --color2: #29a329;
+  --color3: #248f24;
+  --color4: #47d147;
+  --color5: #33cc59;
+  --color6: #33cca6;
+  --color7: #3333cc;
+  --color8: #adebad;
+  --color9: #0a290a;
+  --color10: #738c73;
+  --color11: #cc3380;
+  --color12: #cca633;
+  --color13: #33cccc;
+  --color14: #33cc80;
+  --color15: #cc8033;
+  --color16: #000000;
+
+  --bgHeader: var(--color14);
+  --bgNav: var(--color8);
+  --bgMain: var(--color5);
+  --bgFooter: var(--color1);
+  --textHeader: var(--color7);
+  --textParagraph: var(--color9);
+  --textLink: var(--color7);
+}
+
 * {
   margin: 0;
   padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+* > h1,
+* > h2,
+* > h3,
+* > h4,
+* > h5,
+* > h6 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-transform: uppercase;
+  color: var(--color16);
+}
+* > p {
+  color: var(--textParagraph);
+}
+* > a {
+  font-family: 'Courier New', Courier, monospace
+  color: var(--textLink);
+}
+
 body {
   min-height: 100vh;
 }
-.screen-fill {
-  width: 100vw;
-  height: 100vh;
+.body-wrapper {
+  height: 110vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 9fr 1fr;
 }
-.b-beige {
-  background-color: beige;
-}
-.center-content {
+.header {
+  font-size: xx-large;
+  display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--bgHeader);
+}
+.nav {
+  padding: 10px;
   display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: var(--bgNav);
+}
+.nav > a {
+  border-radius: 10px;
+  font-size: large;
+  text-decoration: none;
+  min-width: 8%;
+  background-color: black;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.maincontent {
+  background-color: var(--bgMain);
+}
+.footer {
+  display: flex;
+  font-size: larger;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bgFooter);
+}
+@media (max-aspect-ratio: 1/1) {
+  .nav > a {
+
+  min-width: 33%;
+
+}
 }

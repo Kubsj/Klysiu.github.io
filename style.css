@@ -41,7 +41,7 @@
   color: var(--textParagraph);
 }
 * > a {
-  font-family: "Courier New", Courier, monospace;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: var(--textLink);
 }
 
@@ -55,9 +55,11 @@ body {
   grid-template-rows: 1fr 1fr 9fr 1fr;
 }
 .header {
-  font-size: xx-large;
+  overflow: hidden;
+  padding: 10px;
+  font-size: xxx-large;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   background-color: var(--bgHeader);
 }
@@ -69,17 +71,11 @@ body {
   justify-content: flex-end;
   align-items: center;
   background-color: var(--bgNav);
-  background: linear-gradient(
-    180deg,
-    var(--bgHeader),
-    var(--bgNav),
-    var(--bgMain)
-  );
 }
 .nav > a {
   border: 1px solid black;
   border-radius: 10px;
-  font-size: large;
+  font-size: larger;
   text-decoration: none;
   min-width: 6%;
   background-color: var(--bgNavBtn);
@@ -97,18 +93,28 @@ body {
 .maincontent {
   background-color: var(--bgMain);
 }
-.scroll {
-  width: max-content;
-  word-wrap: normal;
-  position: absolute;
-
-  letter-spacing: 3px;
-  font-size: x-large;
-  animation-name: scroll;
-  animation-duration: 5s;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-  animation-iteration-count: infinite;
+.text-container-wrapper {
+  height: 30vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.text-container {
+  border-radius: 10px;
+  border: 1px solid black;
+  width: 30%;
+  height: 50%;
+}
+.text-container h3 {
+  text-align: center;
+  color: var(--color1);
+}
+.text-container:nth-child(1) {
+  background-color: var(--color10);
+  color: var(--color6);
+}
+.text-container:nth-child(2) {
+  background-color: var(--color4);
 }
 
 .footer {

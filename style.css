@@ -24,10 +24,19 @@
   /*! Cube stuff */
   --size: 50px;
   --scale: 1;
+
+  /** final size */
   --sF: calc(var(--size) * var(--scale));
+
+  /** half size */
   --sH: calc(var(--sF) / 2);
   --sHr: calc(var(--sH) * -1);
+
+  /** perspective */
   --sP: calc(var(--sF) * 3);
+
+  /** animation duration  */
+  --aS: 5s;
 }
 
 * {
@@ -88,7 +97,7 @@ body {
   height: var(--sF);
   transform: translateZ(var(--sHr));
   animation-name: rotate-cube;
-  animation-duration: 5s;
+  animation-duration: var(--aS);
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
@@ -110,6 +119,7 @@ body {
   background-color: var(--bgNav);
   opacity: 100%;
 }
+
 .cube-face.front {
   transform: rotateY(0deg) translateZ(var(--sH));
 }

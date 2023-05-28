@@ -9,6 +9,7 @@
   --color8: #ec9ac1;
   --color9: #f45e9d;
   --color10: #f36f66;
+  --color11: #f565a5;
 
   --bgHeader: var(--color1);
   --bgNav: var(--color2);
@@ -19,10 +20,17 @@
   --textHeaderAlt: var(--color4);
   --textParagraph: var(--color1);
   --textLink: var(--color6);
+
+  /*! Cube stuff */
+  --size: 50px;
+  --scale: 1;
+  --sF: calc(var(--size) * var(--scale));
+  --sH: calc(var(--sF) / 2);
+  --sHr: calc(var(--sH) * -1);
+  --sP: calc(var(--sF) * 3);
 }
 
 * {
-  overflow-x: hidden;
   margin: 0;
   padding: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -52,7 +60,7 @@ body {
   height: 110vh;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 9fr 1fr;
+  grid-template-rows: minmax(50px, 1fr) minmax(80px, 1fr) 9fr minmax(80px, 1fr);
 }
 .header {
   overflow: hidden;
@@ -62,6 +70,63 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: var(--bgHeader);
+}
+.scene {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5%;
+  height: 100%;
+  perspective: var(--sP);
+  transform-style: preserve-3d;
+}
+
+.cube {
+  position: relative;
+  transform-style: preserve-3d;
+  width: var(--sF);
+  height: var(--sF);
+  transform: translateZ(var(--sHr));
+  animation-name: rotate-cube;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+@keyframes rotate-cube {
+  from {
+    transform: translateZ(var(--sH)) rotateX(0) rotateY(0);
+  }
+  to {
+    transform: translateZ(var(--sH)) rotateX(360deg) rotateY(360deg);
+  }
+}
+
+.cube-face {
+  border: 2px solid black;
+  position: absolute;
+  width: var(--sF);
+  height: var(--sF);
+  background-color: var(--bgNav);
+  opacity: 100%;
+}
+.cube-face.front {
+  transform: rotateY(0deg) translateZ(var(--sH));
+}
+.cube-face.back {
+  transform: rotateY(180deg) translateZ(var(--sH));
+}
+.cube-face.left {
+  transform: rotateY(-90deg) translateZ(var(--sH));
+}
+.cube-face.right {
+  transform: rotateY(90deg) translateZ(var(--sH));
+}
+.cube-face.top {
+  transform: rotateX(90deg) translateZ(var(--sH));
+}
+.cube-face.bottom {
+  transform: rotateX(-90deg) translateZ(var(--sH));
 }
 .nav {
   overflow: hidden;
@@ -94,26 +159,39 @@ body {
   background-color: var(--bgMain);
 }
 .text-container-wrapper {
-  height: 30vh;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
+  min-height: 30vh;
+  height: 100%;
 }
 .text-container {
+  font-size: large;
+  color: var(--color1);
   border-radius: 10px;
   border: 1px solid black;
-  width: 30%;
-  height: 50%;
+  width: 35%;
+  min-height: 33%;
+  height: 33%;
 }
 .text-container h3 {
-  text-align: center;
+  margin: 20px 0 0 0;
   color: var(--color1);
+  text-align: center;
 }
-.text-container:nth-child(1) {
-  background-color: var(--color10);
-  color: var(--color6);
+.text-container p {
+  margin: 20px 40px 0 40px;
 }
+.text-container.main {
+  width: 80%;
+  background-color: var(--color11);
+}
+
 .text-container:nth-child(2) {
+  background-color: var(--color10);
+}
+.text-container:nth-child(3) {
   background-color: var(--color4);
 }
 
@@ -131,5 +209,40 @@ body {
   .nav > a {
     font-size: x-large;
     min-width: 30%;
+  }
+  .text-container-wrapper {
+    flex-wrap: wrap;
+    overflow: hidden;
+    gap: 10px;
+    height: fit-content;
+  }
+  .text-container {
+    width: 80%;
+    height: fit-content;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .header {
+    font-size: xx-large;
+  }
+  :root {
+    --scale: 0.7;
+  }
+  .scene {
+    width: 10%;
+  }
+}
+@media only screen and (max-height: 1000px) {
+  :root {
+    --scale: 0.7;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .header {
+    font-size: large;
+    justify-content: center;
+  }
+  .scene {
+    display: none;
   }
 }

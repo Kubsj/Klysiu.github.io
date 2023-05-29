@@ -69,7 +69,7 @@ body {
   height: 110vh;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: minmax(50px, 1fr) minmax(80px, 1fr) 9fr minmax(80px, 1fr);
+  grid-template-rows: minmax(70px, 1fr) minmax(80px, 1fr) 9fr minmax(80px, 1fr);
 }
 .header {
   overflow: hidden;
@@ -251,8 +251,14 @@ body {
   .header {
     font-size: large;
     justify-content: center;
+    text-align: center;
   }
   .scene {
     display: none;
+  }
+}
+@media only screen and (max-width: 300px) {
+  .nav {
+    display: initial;
   }
 }

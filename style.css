@@ -261,4 +261,10 @@ body {
   .nav {
     display: initial;
   }
+  .body-wrapper {
+    grid-template-rows: minmax(70px, 1fr) minmax(80px, 1fr) 9fr minmax(
+        80px,
+        1fr
+      );
+  }
 }

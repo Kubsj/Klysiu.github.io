@@ -102,15 +102,19 @@ body {
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
+.cube:hover .cube-face {
+  background-image: url(img/jaca.jpg);
+  background-size: 100% 100%;
+}
 @keyframes rotate-cube {
-  from {
+  0% {
     transform: translateZ(var(--sH)) rotateX(0) rotateY(0);
   }
-  to {
+
+  100% {
     transform: translateZ(var(--sH)) rotateX(360deg) rotateY(360deg);
   }
 }
-
 .cube-face {
   border: 2px solid black;
   position: absolute;
@@ -118,6 +122,25 @@ body {
   height: var(--sF);
   background-color: var(--bgNav);
   opacity: 100%;
+  animation-name: change-cube-face-color;
+  animation-duration: calc(var(--aS) * 3);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes change-cube-face-color {
+  0% {
+    background-color: var(--bgNav);
+  }
+  33% {
+    background-color: var(--color9);
+  }
+  66% {
+    background-color: var(--color10);
+  }
+  100% {
+    background-color: var(--bgNav);
+  }
 }
 
 .cube-face.front {
@@ -190,8 +213,9 @@ body {
   color: var(--color1);
   text-align: center;
 }
-.text-container p {
-  margin: 20px 40px 0 40px;
+.text-container p,
+ul {
+  margin: 20px 40px 40px 40px;
 }
 .text-container.main {
   width: 80%;

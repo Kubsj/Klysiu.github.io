@@ -10,6 +10,7 @@
   --color9: #f45e9d;
   --color10: #f36f66;
   --color11: #f565a5;
+  --color12: #845685;
 
   --bgHeader: var(--color1);
   --bgNav: var(--color2);
@@ -20,6 +21,10 @@
   --textHeaderAlt: var(--color4);
   --textParagraph: var(--color1);
   --textLink: var(--color6);
+
+  --contact-1: var(--color5);
+  --contact-2: var(--color12);
+  --contact-3: var(--color3);
 
   /*! Cube stuff */
   --size: 50px;
@@ -236,6 +241,54 @@ ul {
   align-items: center;
   background-color: var(--bgFooter);
 }
+
+.contact-wrapper {
+  width: 100%;
+  gap: 2%;
+
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.contact-square {
+  margin: 20px 20px 20px 20px;
+  width: 400px;
+  height: 600px;
+}
+.contact-square .img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  width: 100%;
+}
+
+.img-container img {
+  height: 90%;
+  object-fit: scale-down;
+  margin: 5% 5% 5% 5%;
+}
+
+.contact-square .c-text-container {
+  font-size: larger;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+}
+.contact-square:nth-child(n) {
+  background-color: var(--contact-1);
+}
+.contact-square:nth-child(2n) {
+  background-color: var(--contact-2);
+}
+.contact-square:nth-child(3n) {
+  background-color: var(--contact-3);
+}
+
 @media (max-aspect-ratio: 1/1) {
   .nav {
     justify-content: center;

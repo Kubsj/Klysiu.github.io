@@ -1,70 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles/style.css" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Strona Główna</title>
   </head>
   <body>
-    <div class="body-wrapper">
-      <div class="header">
-        <div class="rotating-header">
-          <div class="front">Jakub "Klysiu" Klysinski</div>
-          <div class="top">Front-endowiec</div>
-          <div class="back">Software Engineer</div>
-          <div class="bottom">Deweloper gier</div>
-          <div class="left"></div>
-          <div class="right"></div>
-        </div>
+    <header>
+      <div class="rotating-header">
+        <div class="front">Jakub "Klysiu" Klysinski</div>
+        <div class="top">Front-endowiec</div>
+        <div class="back">Software Engineer</div>
+        <div class="bottom">Deweloper gier</div>
+        <div class="left"></div>
+        <div class="right"></div>
       </div>
-      <div class="nav">
-        <a href="index.html">O mnie</a>
-        <a href="projects.html">projekty</a>
-        <a href="contact.html">Kontakt</a>
-      </div>
-      <div class="about-me-maincontent">
-        <div class="about-me-main">
+    </header>
+    <nav>
+      <a href="#" onclick="switchWindow(0)">O mnie</a>
+      <a href="#" onclick="switchWindow(1)">projekty</a>
+      <a href="#" onclick="switchWindow(2)">Kontakt</a>
+    </nav>
+    <main>
+      <div class="about-me" id="aboutme">
+        <div>
           <h3>O mnie</h3>
           <p>
-            Hejo! Nazywam się Jakub "Kłysiu" Kłysiński i jestem programistą.
-            Lubię wyrażać swoją kreatywność w projektach i kocham tworzyć gry.
-            Chodzę do
-            <a href="https://tzn.edu.pl">Technicznych Zakładów Naukowych</a>.
-            Uwielbiam też słuchać muzyki i rysować.
+            Hejo! Nazywam się Jakub Kłysiński. Kocham muzykę, książki i
+            filozofię. Gram na ukulele i gitarze basowej, kolekcjonuję plakaty i
+            tworzę muzykę.
           </p>
         </div>
-        <div class="about-me-photo"></div>
-        <div class="about-me-left">
-          <h3>Moje zainteresowania:</h3>
-          <ul>
-            <li>Gra na ukulele i na gitarze basowej</li>
-            <li>Synteza dźwięków i tworzenie muzyki</li>
-            <li>Jazda na rowerze</li>
-            <li>Granie w gry</li>
-            <li>Filozofia stoicka</li>
-            <li>Oglądanie seriali, filmów, anime</li>
-            <li>Kolekcjonowanie plakatów</li>
-          </ul>
-        </div>
-        <div class="about-me-right">
-          <h3>Moje umiejętności:</h3>
-          <ul>
-            <li>Tworzenie stron internetowych w HTML, CSS, JS</li>
-            <li>Programowanie w C#, lua, pythonie</li>
-            <li>Tworzenie gier, programów, aplikacji mobilnych</li>
-            <li>Zarządzanie projektami i organizacja</li>
-            <li>Tworzenie grafik rastorowych</li>
-            <li>Marketing, reklamy</li>
-          </ul>
-        </div>
-      </div>
+        <div>
+          <h3>Zainteresowania</h3>
 
-      <div class="footer">
-        <p>Jakub Kłysiu Kłysiński 2023. Wszystkie prawa zatrzeżone LOLOLOLOL</p>
+          <ul>
+            <li>Instrumenty muzyczne</li>
+            <li>Filozofia</li>
+            <li>Książki</li>
+            <li>Muzyka</li>
+            <li>Granie w gry</li>
+            <li>Jazda na rowerze</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Umiejętności</h3>
+          <ul>
+            <li>Tworzenie stron internetowych w HTML, CSS, JS, Bootstrap</li>
+            <li>Tworzenie programów w .NET</li>
+            <li>Programowanie w C#, Lua, Python</li>
+            <li>Tworzenie gier w Unity</li>
+            <li>Komponowanie utworów w FL Studio 20</li>
+            <li>Tworzenie rastorowej grafiki</li>
+            <li>Synteza dźwięków</li>
+          </ul>
+        </div>
       </div>
-    </div>
+      <div class="projects" id="projects">
+        <div class="projects-header">Moje projekty</div>
+        <div class="projects-wrapper">
+          <div class="project">
+            <header>
+              <img src="img/jaca.jpg" />
+            </header>
+            <aside>
+              <img src="img/jaca.jpg" />
+            </aside>
+            <main>
+              <h3>Niga balls</h3>
+              <p class="desc">
+                Czym jest niga bals? dla niewidomych niga balse jest wizjo. Dla
+                głuchyb nige bals jes słucem. Dla głodbych niga bals jest amciu
+                amciu
+              </p>
+            
+            </main>
+
+            <div class="images">
+              <div class="image">
+                <img src="img/jaca.jpg" alt="" />
+              </div>
+              <div class="image">
+                <img src="img/jaca.jpg" alt="" />
+              </div>
+              <div class="image">
+                <img src="img/jaca.jpg" alt="" />
+              </div>
+              <div class="image">
+                <img src="img/jaca.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact" id="contact"></div>
+    </main>
+    <footer>
+      <p>Jakub Kłysiu Kłysiński 2023. Wszelkie prawa zatrzeżone LOLOLOLOL</p>
+    </footer>
   </body>
-  <script src="cube-script.js"></script>
+  <script src="scripts/script.js"></script>
 </html>
